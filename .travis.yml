@@ -20,3 +20,16 @@ after_success:
   - docker push gaeshi2/multi-nginx
   - docker push gaeshi2/multi-server
   - docker push gaeshi2/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-west-2-350583070229
+  bucket_path: docker-multi
+  on:
+    branch:  master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secret: $AWS_SECRET_KEY
