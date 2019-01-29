@@ -16,13 +16,6 @@
       "essential": false
     },
     {
-      "name": "client",
-      "image": "gaeshi2/multi-client",
-      "hostname": "client",
-      "memory": 128,
-      "essential": false
-    },
-    {
       "name": "worker",
       "image": "gaeshi2/multi-worker",
       "memory": 128,
